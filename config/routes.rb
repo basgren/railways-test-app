@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :books
 
+  namespace :api do
+    resources :books, only: %w(index show create update destroy)
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :books
 
   namespace :api do
@@ -10,6 +11,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'books#index'
+
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

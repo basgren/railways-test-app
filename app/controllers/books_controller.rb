@@ -1,4 +1,7 @@
 class BooksController < ParentController
+
+  include Concerns::RouteTest
+
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   # GET /books

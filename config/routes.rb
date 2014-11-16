@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :books
 
   get 'parent_action' => 'books#parent_action'
+  get 'concern_action' => 'books#concern_action'
 
   namespace :api do
     resources :books, only: %w(index show create update destroy)

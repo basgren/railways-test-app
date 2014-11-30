@@ -1,4 +1,4 @@
-class API::BooksController < ApplicationController
+class My::BooksController < ApplicationController
 
   respond_to :json
 

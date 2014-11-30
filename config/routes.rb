@@ -12,6 +12,14 @@ Rails.application.routes.draw do
   get 'concern_action' => 'books#concern_action'
 
 
+  # Route that points to non-existent method
+  get 'no-method' => 'books#no_method'
+
+
+  # Route that points to nowhere (no existing controller and no existing method)
+  get 'nowhere' => 'no_controller#no_method'
+
+
   # Route that points to namespaced controller.
   namespace :my do
     get 'books' => 'books#index'

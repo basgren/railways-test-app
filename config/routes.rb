@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  # You can have the root of your site routed with "root"
+  root 'books#index'
+
+
   # Standard resource routes - represents all kind of request methods.
   resources :books
 
@@ -32,8 +36,8 @@ Rails.application.routes.draw do
   end
 
 
-  # You can have the root of your site routed with "root"
-  root 'books#index'
+  # Redirect URLs
+  get 'redirect_301' => redirect('/books')
 
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

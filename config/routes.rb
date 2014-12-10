@@ -39,6 +39,12 @@ Rails.application.routes.draw do
   # Redirect URLs
   get 'redirect_301' => redirect('/books')
 
+  # Redirect with proc
+  get 'redirect_proc' => redirect { |params, request|
+      path = (params[:number].to_i.even? ? 'wheres-the-beef' : 'i-love-lamp')
+      "http://#{request.host_with_port}/#{path}"
+    }
+
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
